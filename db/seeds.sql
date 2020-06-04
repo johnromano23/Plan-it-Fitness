@@ -1,5 +1,2 @@
-INSERT INTO beginner (name,sets,reps,break) VALUES ('Push-up', 3, 10, 1);
-
-INSERT INTO intermediate (name_id, sets, reps, break) VALUES (1, 5, 15, 2);
-
-INSERT INTO advance (name_id, sets, reps, break) VALUES (1, 7, 20, 3);
+INSERT INTO workouts (name,sets,reps,break,level,UserId,createdAt,updatedAt) VALUES ('Push-up', 3, 10, 1,"Beginner",1,curdate(),curdate());
+INSERT INTO workouts (name,sets,reps,break,level,UserId,createdAt,updatedAt) VALUES ('Sit-up', 5, 15, 2,"Intermediate",1,curdate(),curdate());

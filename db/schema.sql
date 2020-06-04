@@ -1,35 +1,28 @@
+DROP DATABASE if exists workout_db;
 CREATE DATABASE workout_db;
 USE workout_db;
 
-CREATE TABLE beginner
+CREATE TABLE IF NOT EXISTS `Users` 
 (
-	id int NOT NULL AUTO_INCREMENT,
-	name varchar(255) NOT NULL,
-    sets int NOT NULL,
-    reps int NOT NULL,
-    break int NOT NULL,
-	PRIMARY KEY (id)
-    
+    id INTEGER NOT NULL auto_increment , 
+    email VARCHAR(255) NOT NULL UNIQUE,
+     password VARCHAR(255) NOT NULL, 
+     createdAt DATETIME NOT NULL, 
+     updatedAt DATETIME NOT NULL, 
+     PRIMARY KEY (`id`)
 );
 
-CREATE TABLE intermediate
+CREATE TABLE IF NOT EXISTS `Workouts` 
 (
-	id int NOT NULL AUTO_INCREMENT,
-    sets int NOT NULL,
-    reps int NOT NULL,
-    break int NOT NULL,
-    name_id int NOT NULL,
-	PRIMARY KEY (id),
-    FOREIGN KEY (name_id) REFERENCES beginner(id)
-);
-
-CREATE TABLE advance
-(
-	id int NOT NULL AUTO_INCREMENT,
-    sets int NOT NULL,
-    reps int NOT NULL,
-    break int NOT NULL,
-    name_id int NOT NULL,
-	PRIMARY KEY (id),
-    FOREIGN KEY (name_id) REFERENCES beginner(id)
+    id INTEGER NOT NULL auto_increment , 
+    name VARCHAR(255) NOT NULL UNIQUE, 
+    sets INTEGER NOT NULL, 
+    reps INTEGER NOT NULL,
+     break INTEGER NOT NULL, 
+     level VARCHAR(255) NOT NULL DEFAULT 'Beginner', 
+     createdAt DATETIME NOT NULL, 
+     updatedAt DATETIME NOT NULL,
+      UserId INTEGER, 
+      PRIMARY KEY (`id`), 
+      FOREIGN KEY (`UserId`) REFERENCES `Users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 );
