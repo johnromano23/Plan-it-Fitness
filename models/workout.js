@@ -1,70 +1,42 @@
-var orm = require("../config/orm.js");
 
-var beginner = {
-    all: function (cb) {
-        orm.all("beginner", function (res) {
-            cb(res);
-        });
-    },
-    create: function (cols, vals, cb) {
-        orm.create("beginner", cols, vals, function (res) {
-            cb(res);
-        });
-    },
-    update: function (objColVals, condition, cb) {
-        orm.update("beginner", objColVals, condition, function (res) {
-            cb(res);
-        });
-    },
-    delete: function (condition, cb) {
-        orm.delete("beginner", condition, function (res) {
-            cb(res);
-        });
-    }
-};
-var intermediate = {
-    all: function (cb) {
-        orm.all("intermediate", function (res) {
-            cb(res);
-        });
-    },
-    create: function (cols, vals, cb) {
-        orm.create("intermediate", cols, vals, function (res) {
-            cb(res);
-        });
-    },
-    update: function (objColVals, condition, cb) {
-        orm.update("intermediate", objColVals, condition, function (res) {
-            cb(res);
-        });
-    },
-    delete: function (condition, cb) {
-        orm.delete("intermediate", condition, function (res) {
-            cb(res);
-        });
-    }
-};
-var advance = {
-    all: function (cb) {
-        orm.all("advance", function (res) {
-            cb(res);
-        });
-    },
-    create: function (cols, vals, cb) {
-        orm.create("advance", cols, vals, function (res) {
-            cb(res);
-        });
-    },
-    update: function (objColVals, condition, cb) {
-        orm.update("advance", objColVals, condition, function (res) {
-            cb(res);
-        });
-    },
-    delete: function (condition, cb) {
-        orm.delete("advance", condition, function (res) {
-            cb(res);
-        });
-    }
-};
+// Creating our User model
+module.exports = function (sequelize, DataTypes) {
+    var Workout = sequelize.define("Workout", {
+        // The email cannot be null, and must be a proper email before creation
+        name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: true,
+        },
+        // The password cannot be null
+        sets: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        reps: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        break: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        level: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            defaultValue: "Beginner"
+        }
+    });
 
-module.exports = beginner, intermediate, advance;
+    Workout.associate = function (models) {
+        // We're saying that a Post should belong to an Author
+        // A Post can't be created without an Author due to the foreign key constraint
+        Workout.belongsTo(models.User, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
+    };
+
+    return Workout;
+};
