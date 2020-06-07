@@ -10,7 +10,7 @@
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
-    <title>Members Page </title>
+    <title>Plan-it-Fitness Members Page </title>
 </head>
 
 <body>
@@ -57,44 +57,51 @@
         </p>
     </div>
 
-    <div class="card-deck">
-        
-        <div class="card">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSk-_T9Tgt_mH2otMVTHxnJI-gM_O-YblsaMPw0S5jCxVHof6sO&usqp=CAU" class="card-img-top" alt="workout pic" style="width: 400px; height: 250px; align-self: center;">
-            <div class="card-body">
-                <h5 class="card-title">Workouts</h5>
-                <p class="card-text">Click the link to view our beginner-advanced workout database</p>
-                <div class="card-action">
-                    <a href="" target="_blank">Click Here</a>
-                </div>
-            </div>
-            
-        </div>
-        
-        <div class="card">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS0FjdzsLBZpQJ-2AMOMKdDEsHj4MJHnFkifkmKNPs5ofRSjFUU&usqp=CAU" class="card-img-top" alt="nutrition pic" style="width: 400px; height: 250px; align-self: center;">
-            <div class="card-body">
-                <h5 class="card-title">Nutrition</h5>
-                <p class="card-text">Click the link to access our nutrition facts database.</p>
-                <div class="card-action">
-                    <a href="" target="_blank">Click Here</a>
-                </div>
-            </div>
-            
-        </div>
-        
-        <div class="card">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRlobQILwToCZGI5RBhJEqdeLbePwO7OCPqVGPRTT5MS0cVq68k&usqp=CAU" class="card-img-top" alt="BMI pic" style="width: 400px; height: 250px; align-self: center;">
-            <div class="card-body">
-                <h5 class="card-title">BMI Calculator</h5>
-                <p class="card-text">Click the link to access the BMI calculator.</p>
-                <div class="card-action">
-                    <a href="" target="_blank">Click Here</a>
-                </div>
-            </div>            
-        </div>
-    </div>
+    <div class="container">
+      <div class="row">
+          <div class="col-md-4">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRlobQILwToCZGI5RBhJEqdeLbePwO7OCPqVGPRTT5MS0cVq68k&usqp=CAU" alt="BMI image"
+                          height="200" width="300">                             
+          </div>
+          <div class="col-md-4" style="width: auto;">
+                      <p id="lbl" style="text-align: center;">BMI Calculator</p>
+                      Enter Your Weight(lbs): <input type="text" id="w"></input>
+                      <br><br>
+                      Enter Your Height(in.): <input type="text" id="h"></input>
+                      <br><br><br>
+                      <button id="btn" onclick="BMI()">Calculate BMI</button>
+                      <br> <br>
+          
+                      <p id="result"></p>
+          </div>
+          <div class="col-md-4">
+              <p id="lbl" style="text-align: center;">BMI Results</p>
+          </div>
+      </div>
+  </div>
+  <br> <br>
 
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS0FjdzsLBZpQJ-2AMOMKdDEsHj4MJHnFkifkmKNPs5ofRSjFUU&usqp=CAU" alt="BMI image"
+          height="auto" width="auto"> 
+      </div>
+      <div class="col-md-4" style="width: auto;">
+          <p id="lbl" style="text-align: center;">Nutrition Search: Type in a food!</p>
+          <div class="main">
+          <input type="text" />
+          <input type="submit" value="Go">
+          </div>
+
+      </div>
+      <div class="col-md-4">
+          <p id="lbl" style="text-align: center;">Nutritional Values</p>
+      </div>
+  </div>
+  </div>
+
+  
     <div class="container">
         <header class="jumbotron">
             <h2 class="display-3" style="text-align: center; height: 2rem;">Build Your Weekly Planner</h2><br><br>
@@ -155,7 +162,7 @@
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="index.js"></script>
+    <script src="js/members.js"></script>
 </body>
 
 </html>
