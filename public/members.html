@@ -47,6 +47,143 @@
       </div>
     </div>
 
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">
+                      Dropdown
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+      </div>
+  </nav>
+
+  <div class="jumbotron">
+      <h1 class="display-4">Welcome, Member!</h1>
+      <p class="lead">This is the members page where you can view workouts from all levels, search nutritional facts,
+          calculate your BMI, and customize your own weekly planner!
+      </p>
+  </div>
+
+  <div class="card-deck">
+      
+      <div class="card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSk-_T9Tgt_mH2otMVTHxnJI-gM_O-YblsaMPw0S5jCxVHof6sO&usqp=CAU" class="card-img-top" alt="workout pic" style="width: 400px; height: 250px; align-self: center;">
+          <div class="card-body">
+              <h5 class="card-title">Workouts</h5>
+              <p class="card-text">Click the link to view our beginner-advaced workout database</p>
+              <div class="card-action">
+                  <a href="" target="_blank">Click Here</a>
+              </div>
+          </div>
+          
+      </div>
+      
+      <div class="card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS0FjdzsLBZpQJ-2AMOMKdDEsHj4MJHnFkifkmKNPs5ofRSjFUU&usqp=CAU" class="card-img-top" alt="nutrition pic" style="width: 400px; height: 250px; align-self: center;">
+          <div class="card-body">
+              <h5 class="card-title">Nutrition</h5>
+              <p class="card-text">Click the link to access our nutrition facts database.</p>
+              <div class="card-action">
+                  <a href="" target="_blank">Click Here</a>
+              </div>
+          </div>
+          
+      </div>
+      
+      <div class="card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRlobQILwToCZGI5RBhJEqdeLbePwO7OCPqVGPRTT5MS0cVq68k&usqp=CAU" class="card-img-top" alt="BMI pic" style="width: 400px; height: 250px; align-self: center;">
+          <div class="card-body">
+              <h5 class="card-title">BMI Calculator</h5>
+              <p class="card-text">Click the link to access the BMI calculator.</p>
+              <div class="card-action">
+                  <a href="" target="_blank">Click Here</a>
+              </div>
+          </div>            
+      </div>
+  </div>
+
+  <div class="container">
+      <header class="jumbotron">
+          <h2 class="display-3" style="text-align: center; height: 2rem;">Build Your Weekly Planner</h2><br><br>
+          <h3 style="text-align: center;">Use This Calendar to Log Workouts, Meals, etc.</h3>
+          <p class="lead"></p>
+          <p id="currentDay" class="lead"></p>
+      </header>
+      <div class="container">
+          <div id="calendar-row1" class="row justify-content-md-center border-top border-bottom calendar-row">
+              <div id="time1" class="col-md-1">Monday</div>
+              <textarea rows="3" id="text-entry1" class="col-md-10"></textarea>
+              <button id="save" class="col-md-1"><i class="far fa-save"></i></button>
+          </div>
+      
+          <div id="calendar-row2" class="row justify-content-md-center border-top border-bottom calendar-row">
+              <div id="time2" class="col-md-1">Tuesday</div>
+              <textarea rows="3" id="text-entry2" class="col-md-10"></textarea>
+              <button id="save" class="col-md-1"><i class="far fa-save"></i></button>
+          </div>
+      
+          <div id="calendar-row3" class="row justify-content-md-center border-top border-bottom calendar-row">
+              <div id="time3" class="col-md-1">Wednesday</div>
+              <textarea rows="3" id="text-entry3" class="col-md-10"></textarea>
+              <button id="save" class="col-md-1"><i class="far fa-save"></i></button>
+          </div>
+      
+          <div id="calendar-row4" class="row justify-content-md-center border-top border-bottom calendar-row">
+              <div id="time4" class="col-md-1">Thursday</div>
+              <textarea rows="3" id="text-entry4" class="col-md-10"></textarea>
+              <button id="save" class="col-md-1"><i class="far fa-save"></i></button>
+          </div>
+      
+          <div id="calendar-row5" class="row justify-content-md-center border-top border-bottom calendar-row">
+              <div id="time5" class="col-md-1">Friday</div>
+              <textarea rows="3" id="text-entry5" class="col-md-10"></textarea>
+              <button id="save" class="col-md-1"><i class="far fa-save"></i></button>
+          </div>
+      
+          <div id="calendar-row6" class="row justify-content-md-center border-top border-bottom calendar-row">
+              <div id="time6" class="col-md-1 time">Saturday</div>
+              <textarea rows="3" id="text-entry6" class="col-md-10"></textarea>
+              <button id="save" class="col-md-1"><i class="far fa-save"></i></button>
+          </div>
+      
+          <div id="calendar-row7" class="row justify-content-md-center border-top border-bottom calendar-row">
+              <div id="time7" class="col-md-1 time">Sunday</div>
+              <textarea rows="3" id="text-entry7" class="col-md-10"></textarea>
+              <button id="save" class="col-md-1"><i class="far fa-save"></i></button>
+          </div>
+      
+      
+      
+      </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/members.js"></script>
   </body>
