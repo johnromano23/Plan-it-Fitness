@@ -2,163 +2,158 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Plan-it-Fitness Members Page </title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Plan-it-Fitness Members Page </title>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <span class="navbar-brand mb-1 h1">Plan-It-Fitness</span>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="true"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <section class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="nav navbar-nav navbar-left">
-            <li class="nav-item">
-              <a class="nav-link" href="login.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="members.html">Members</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="signup.html">Sign Up</a>
-            </li>
-          </ul>
-        </section>
-      </nav>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <span class="navbar-brand mb-1 h1">Plan-It-Fitness</span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <section class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="nav navbar-nav navbar-left">
+        <li class="nav-item">
+          <a class="nav-link" href="login.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="members.html">Members</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">Logout</a>
+        </li>
+      </ul>
+    </section>
+  </nav>
 
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 col-md-offset-3">
-            
-          </div>
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+
       </div>
-
-    <div class="jumbotron">
-        <h1 class="display-4">Welcome, Member!</h1>
-        <p class="lead">This is the members page where you can view workouts from all levels, search nutritional facts,
-            calculate your BMI, and customize your own weekly planner!
-        </p>
     </div>
+  </div>
 
-    <div class="container">
-      <div class="row">
-          <div class="col-md-4">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRlobQILwToCZGI5RBhJEqdeLbePwO7OCPqVGPRTT5MS0cVq68k&usqp=CAU" alt="BMI image"
-                          height="200" width="300">                             
-          </div>
-          <div class="col-md-4" style="width: auto;">
-                      <p id="lbl" style="text-align: center;">BMI Calculator</p>
-                      Enter Your Weight(lbs): <input type="text" id="w"></input>
-                      <br><br>
-                      Enter Your Height(in.): <input type="text" id="h"></input>
-                      <br><br><br>
-                      <button id="calculateBMI" onclick="BMI()">Calculate BMI</button>
-                      <br> <br>
-          
-                      <p id="result"></p>
-          </div>
-          <div class="col-md-4">
-              <p id="lbl" style="text-align: center;">BMI Results</p>
-          </div>
+  <div class="jumbotron">
+    <h1 class="display-4">Welcome, Member!</h1>
+    <p class="lead">This is the members page where you can view workouts from all levels, search nutritional facts,
+      calculate your BMI, and customize your own weekly planner!
+    </p>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRlobQILwToCZGI5RBhJEqdeLbePwO7OCPqVGPRTT5MS0cVq68k&usqp=CAU"
+          alt="BMI image" height="200" width="300">
       </div>
+      <div class="col-md-4" style="width: auto;">
+        <p id="lbl" style="text-align: center;">BMI Calculator</p>
+        Enter Your Weight(lbs): <input type="text" id="w"></input>
+        <br><br>
+        Enter Your Height(in.): <input type="text" id="h"></input>
+        <br><br><br>
+        <button id="calculateBMI" onclick="BMI()">Calculate BMI</button>
+        <br> <br>
+
+        <p id="result"></p>
+      </div>
+      <div class="col-md-4">
+        <p id="lbl" style="text-align: center;">BMI Results</p>
+      </div>
+    </div>
   </div>
   <br> <br>
 
   <div class="container">
     <div class="row">
       <div class="col-md-4">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS0FjdzsLBZpQJ-2AMOMKdDEsHj4MJHnFkifkmKNPs5ofRSjFUU&usqp=CAU" alt="BMI image"
-          height="auto" width="auto"> 
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS0FjdzsLBZpQJ-2AMOMKdDEsHj4MJHnFkifkmKNPs5ofRSjFUU&usqp=CAU"
+          alt="BMI image" height="auto" width="auto">
       </div>
       <div class="col-md-4" style="width: auto;">
-          <p id="lbl" style="text-align: center;">Nutrition Search: Type in a food!</p>
-          <div class="main">
+        <p id="lbl" style="text-align: center;">Nutrition Search: Type in a food!</p>
+        <div class="main">
           <input type="text" />
           <input type="submit" value="Go">
-          </div>
+        </div>
 
       </div>
       <div class="col-md-4">
-          <p id="lbl" style="text-align: center;">Nutritional Values</p>
+        <p id="lbl" style="text-align: center;">Nutritional Values</p>
       </div>
-  </div>
+    </div>
   </div>
 
-  
+
+  <div class="container">
+    <header class="jumbotron">
+      <h2 class="display-3" style="text-align: center; height: 2rem;">Build Your Weekly Planner</h2><br><br>
+      <h3 style="text-align: center;">Use This Calendar to Log Workouts, Meals, etc.</h3>
+      <p class="lead"></p>
+      <p id="currentDay" class="lead"></p>
+    </header>
     <div class="container">
-        <header class="jumbotron">
-            <h2 class="display-3" style="text-align: center; height: 2rem;">Build Your Weekly Planner</h2><br><br>
-            <h3 style="text-align: center;">Use This Calendar to Log Workouts, Meals, etc.</h3>
-            <p class="lead"></p>
-            <p id="currentDay" class="lead"></p>
-        </header>
-        <div class="container">
-            <div id="calendar-row1" class="row justify-content-md-center border-top border-bottom calendar-row">
-                <div id="time1" class="col-md-1">Monday</div>
-                <textarea rows="3" id="text-entry1" class="col-md-10"></textarea>
-                <button id="save" class="col-md-1"><i class="far fa-save"></i></button>
-            </div>
-        
-            <div id="calendar-row2" class="row justify-content-md-center border-top border-bottom calendar-row">
-                <div id="time2" class="col-md-1">Tuesday</div>
-                <textarea rows="3" id="text-entry2" class="col-md-10"></textarea>
-                <button id="save" class="col-md-1"><i class="far fa-save"></i></button>
-            </div>
-        
-            <div id="calendar-row3" class="row justify-content-md-center border-top border-bottom calendar-row">
-                <div id="time3" class="col-md-1">Wednesday</div>
-                <textarea rows="3" id="text-entry3" class="col-md-10"></textarea>
-                <button id="save" class="col-md-1"><i class="far fa-save"></i></button>
-            </div>
-        
-            <div id="calendar-row4" class="row justify-content-md-center border-top border-bottom calendar-row">
-                <div id="time4" class="col-md-1">Thursday</div>
-                <textarea rows="3" id="text-entry4" class="col-md-10"></textarea>
-                <button id="save" class="col-md-1"><i class="far fa-save"></i></button>
-            </div>
-        
-            <div id="calendar-row5" class="row justify-content-md-center border-top border-bottom calendar-row">
-                <div id="time5" class="col-md-1">Friday</div>
-                <textarea rows="3" id="text-entry5" class="col-md-10"></textarea>
-                <button id="save" class="col-md-1"><i class="far fa-save"></i></button>
-            </div>
-        
-            <div id="calendar-row6" class="row justify-content-md-center border-top border-bottom calendar-row">
-                <div id="time6" class="col-md-1 time">Saturday</div>
-                <textarea rows="3" id="text-entry6" class="col-md-10"></textarea>
-                <button id="save" class="col-md-1"><i class="far fa-save"></i></button>
-            </div>
-        
-            <div id="calendar-row7" class="row justify-content-md-center border-top border-bottom calendar-row">
-                <div id="time7" class="col-md-1 time">Sunday</div>
-                <textarea rows="3" id="text-entry7" class="col-md-10"></textarea>
-                <button id="save" class="col-md-1"><i class="far fa-save"></i></button>
-            </div>
-        
-        
-        
-        </div>
-        <footer class="container">
-          <p>&copy; Rutgers Coding Bootcamp 2020</p>
-        </footer>
-    
+      <div id="calendar-row1" class="row justify-content-md-center border-top border-bottom calendar-row">
+        <div id="time1" class="col-md-1">Monday</div>
+        <textarea rows="3" id="text-entry1" class="col-md-10"></textarea>
+        <button id="save" class="col-md-1"><i class="far fa-save"></i></button>
+      </div>
+
+      <div id="calendar-row2" class="row justify-content-md-center border-top border-bottom calendar-row">
+        <div id="time2" class="col-md-1">Tuesday</div>
+        <textarea rows="3" id="text-entry2" class="col-md-10"></textarea>
+        <button id="save" class="col-md-1"><i class="far fa-save"></i></button>
+      </div>
+
+      <div id="calendar-row3" class="row justify-content-md-center border-top border-bottom calendar-row">
+        <div id="time3" class="col-md-1">Wednesday</div>
+        <textarea rows="3" id="text-entry3" class="col-md-10"></textarea>
+        <button id="save" class="col-md-1"><i class="far fa-save"></i></button>
+      </div>
+
+      <div id="calendar-row4" class="row justify-content-md-center border-top border-bottom calendar-row">
+        <div id="time4" class="col-md-1">Thursday</div>
+        <textarea rows="3" id="text-entry4" class="col-md-10"></textarea>
+        <button id="save" class="col-md-1"><i class="far fa-save"></i></button>
+      </div>
+
+      <div id="calendar-row5" class="row justify-content-md-center border-top border-bottom calendar-row">
+        <div id="time5" class="col-md-1">Friday</div>
+        <textarea rows="3" id="text-entry5" class="col-md-10"></textarea>
+        <button id="save" class="col-md-1"><i class="far fa-save"></i></button>
+      </div>
+
+      <div id="calendar-row6" class="row justify-content-md-center border-top border-bottom calendar-row">
+        <div id="time6" class="col-md-1 time">Saturday</div>
+        <textarea rows="3" id="text-entry6" class="col-md-10"></textarea>
+        <button id="save" class="col-md-1"><i class="far fa-save"></i></button>
+      </div>
+
+      <div id="calendar-row7" class="row justify-content-md-center border-top border-bottom calendar-row">
+        <div id="time7" class="col-md-1 time">Sunday</div>
+        <textarea rows="3" id="text-entry7" class="col-md-10"></textarea>
+        <button id="save" class="col-md-1"><i class="far fa-save"></i></button>
+      </div>
+
+
+
+    </div>
+    <footer class="container">
+      <p>&copy; Rutgers Coding Bootcamp 2020</p>
+    </footer>
+
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
