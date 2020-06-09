@@ -5,6 +5,8 @@ USE workout_db;
 CREATE TABLE IF NOT EXISTS `Users` 
 (
     id INTEGER NOT NULL auto_increment , 
+    first VARCHAR(255) NOT NULL,
+    last VARCHAR (255) NOT NULL,
     email VARCHAR(255) NOT NULL UNIQUE,
      password VARCHAR(255) NOT NULL, 
      createdAt DATETIME NOT NULL, 

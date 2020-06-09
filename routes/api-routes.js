@@ -15,6 +15,8 @@ module.exports = function (app) {
     // otherwise send back an error
     app.post("/api/signup", function (req, res) {
         db.User.create({
+            first: req.body.first,
+            last: req.body.last,
             email: req.body.email,
             password: req.body.password
         })
@@ -26,11 +28,7 @@ module.exports = function (app) {
             });
     });
 
-    // Route for logging user out
-    app.get("/logout", function (req, res) {
-        req.logout();
-        res.redirect("/");
-    });
+
 
     // Route for getting some data about our user to be used client side
     app.get("/api/user_data", function (req, res) {
@@ -41,6 +39,8 @@ module.exports = function (app) {
             // Otherwise send back the user's email and id
             // Sending back a password, even a hashed password, isn't a good idea
             res.json({
+                first: req.user.first,
+                last: req.user.last,
                 email: req.user.email,
                 id: req.user.id
             });
