@@ -1,27 +1,46 @@
-function calculateBMI() {
-  var queryURL =
-    "https://bmi.p.rapidapi.com/" +
-    "&key=15419e43aemshf2b1ed464ddf5b8p17efefjsn8c1fa04f2290";
-  $.ajax({
-    url: queryURL,
-    method: "GET",
-  }).then(function (response) {
-    bmiStatus = response.results[0].status;
-    console.log(bmiStatus);
-    bmiRisk = response.results[0].risk;
-    console.log(bmiRisk);
-  });
-}
-// Calculator function to get BMI on button click.
+// Calculate BMI
 function BMI() {
   var w = document.getElementById("w").value;
 
   var h = document.getElementById("h").value;
 
-  var bmi = (w / h / h) * 703;
+  var bmi = ((w / h / h) * 703).toFixed(2);
 
   document.getElementById("result").innerHTML = "Your BMI is " + bmi;
 }
+
+// Getting information from Nutritionix API
+var appID = "34af0f88";
+var apiKey = "a0c6264dee2705479d692f2aecb7d034";
+var foodItemValue = "";
+
+function getInformation(foodItemValue) {
+  $.ajax();
+  this.http.get(
+    "https://api.nutritionix.com/v1_1/search/" +
+      search +
+      "?results=0:1&fields=&appID=" +
+      appID +
+      "&appKey=" +
+      apiKey
+  );
+
+  for (var i = 0; i < data.hits.length; i++) {
+    this.nutrition[i] = {
+      "calories": data.hits[i].fields.nf_calories,
+      "total fat": data.hits[i].fields.nf_total_fat,
+      "sodium": data.hits[i].fields.nf_sodium,
+      "sugars": data.hits[i].fields.nf_sugar,
+      "protein": data.hits[i].fields.nf_protein,
+      "serving size": data.hits[i].fields.nf_serving_size_unit,
+    };
+  }
+}
+console.log()
+
+$("submitBtn").submit(function (event) {
+  event.preventDefault();
+});
 
 let schedule = {
   Monday: "",
