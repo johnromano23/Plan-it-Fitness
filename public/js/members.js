@@ -8,39 +8,91 @@ function BMI() {
 
   document.getElementById("result").innerHTML = "Your BMI is " + bmi;
 }
-
 // Getting information from Nutritionix API
 var appID = "34af0f88";
 var apiKey = "a0c6264dee2705479d692f2aecb7d034";
 var foodItemValue = "";
-
+var fields = "item_name,brand_name,item_id,nf_calories";
 function getInformation(foodItemValue) {
-  $.ajax();
-  this.http.get(
+  //var queryURL = "https://api.nutritionix.com/v1_1/search/cheeseburger?results=0:20&fields=item_name,brand_name,item_id,nf_calories&appId=34af0f88&appKey=a0c6264dee2705479d692f2aecb7d034";
+  var queryURL =
     "https://api.nutritionix.com/v1_1/search/" +
-      search +
-      "?results=0:1&fields=&appID=" +
-      appID +
-      "&appKey=" +
-      apiKey
-  );
-
-  for (var i = 0; i < data.hits.length; i++) {
-    this.nutrition[i] = {
-      "calories": data.hits[i].fields.nf_calories,
-      "total fat": data.hits[i].fields.nf_total_fat,
-      "sodium": data.hits[i].fields.nf_sodium,
-      "sugars": data.hits[i].fields.nf_sugar,
-      "protein": data.hits[i].fields.nf_protein,
-      "serving size": data.hits[i].fields.nf_serving_size_unit,
-    };
-  }
+    foodItemValue +
+    "?results=0:1&fields=" +
+    fields +
+    "&appId=" +
+    appID +
+    "&appKey=" +
+    apiKey;
+  var tempData = [];
+  $.ajax({
+    url: queryURL,
+    method: "GET",
+  }).then(function (data) {
+    console.log(data);
+    var nutritionDiv = $("#monitor-data");
+    for (var i = 0; i < data.hits.length; i++) {
+      // It then creates a new div for each drink. Note we create divs and add the content in the same line.
+      var newNutritionDiv = $(
+        "<div>" + data.hits[i].fields.item_name + "</div>"
+      );
+      nutritionDiv.append(newNutritionDiv);
+      var newNutritionDiv1 = $(
+        "<div>" + data.hits[i].fields.brand_name + "</div>"
+      );
+      nutritionDiv.append(newNutritionDiv1);
+      var newNutritionDiv2 = $(
+        "<div>" + data.hits[i].fields.nf_calories + "</div>"
+      );
+      nutritionDiv.append(newNutritionDiv2);
+      var newNutritionDiv3 = $(
+        "<div>" + data.hits[i].fields.nf_serving_size_unit + "</div>"
+      );
+      nutritionDiv.append(newNutritionDiv3);
+    }
+    console.log(tempData);
+  });
 }
-console.log()
-
-$("submitBtn").submit(function (event) {
+// console.log(tempData);
+$("#submitBtn").on("click", function (event) {
   event.preventDefault();
+  console.log("submitBtn");
+  var foodItemValue = $("#search").val();
+  console.log(foodItemValue);
+  getInformation(foodItemValue);
 });
+// // Getting information from Nutritionix API
+// var appID = "34af0f88";
+// var apiKey = "a0c6264dee2705479d692f2aecb7d034";
+// var foodItemValue = "";
+
+// function getInformation(foodItemValue) {
+//   $.ajax();
+//   this.http.get(
+//     "https://api.nutritionix.com/v1_1/search/" +
+//       search +
+//       "?results=0:1&fields=&appID=" +
+//       appID +
+//       "&appKey=" +
+//       apiKey
+//   );
+
+//   for (var i = 0; i < data.hits.length; i++) {
+//     this.nutrition[i] = {
+//       "calories": data.hits[i].fields.nf_calories,
+//       "total fat": data.hits[i].fields.nf_total_fat,
+//       "sodium": data.hits[i].fields.nf_sodium,
+//       "sugars": data.hits[i].fields.nf_sugar,
+//       "protein": data.hits[i].fields.nf_protein,
+//       "serving size": data.hits[i].fields.nf_serving_size_unit,
+//     };
+//   }
+// }
+// console.log()
+
+// $("submitBtn").submit(function (event) {
+//   event.preventDefault();
+// });
 
 let schedule = {
   Monday: "",
